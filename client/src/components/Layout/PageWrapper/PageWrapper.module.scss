@@ -1,0 +1,8 @@
+@import "src/styles/variables";
+
+.section {
+  background-color: $white-color;
+  padding: 16px;
+  border-radius: 8px;
+  height: $main-content-height;
+}

@@ -1,0 +1,14 @@
+@import 'src/styles/variables';
+
+.exercise-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.exercise-item {
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid $black-color;
+    border-radius: 8px;
+    width: 100%;
+}
