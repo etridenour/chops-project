@@ -1,0 +1,94 @@
+.items-container {
+  display: flex;
+  align-items: center;
+  // padding: 8px;
+  margin-top: 24px;
+}
+
+.item-container {
+  display: flex;
+  padding: 8px 4px 8px 12px;
+  position: relative;
+}
+
+.number-input {
+  width: 50px !important;
+  margin-right: 8px !important;
+}
+
+.count-in {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.item-title {
+  position: absolute;
+  top: -26px;
+}
+
+.duration {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-left: 4px;
+}
+
+.tempo-container-middle {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-left: 4px;
+}
+
+.tempo-container-end {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 16px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 16px !important;
+  margin-left: 4px;
+}
+
+.counts-between {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 16px!important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 16px !important;
+  margin-left: 4px;
+}
+
+.bpm {
+  margin: 6px 0 0 0px;
+}
+
+.form-control {
+  width: 96px;
+  margin-right: 8px;
+}
+
+.plus {
+  font-size: 32px;
+  margin: 0 16px;
+}
+
+.of {
+  margin: 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+.equals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.tempo-select {
+  width: 130px;
+}

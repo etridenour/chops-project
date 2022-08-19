@@ -1,0 +1,61 @@
+.click-track-container {
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.h3 {
+  margin: 4px 0;
+}
+
+.total-time {
+  margin-left: 8px;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+}
+
+.time-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  margin-top: 4px;
+  opacity: 0.8;
+
+  .timer-icon {
+    width: 16px;
+  }
+
+  .total-time {
+    margin-left: 8px;
+    font-size: 14px;
+  }
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  height: 28px;
+
+  .title {
+    margin: 0;
+  }
+}
+
+.button-container {
+  display: flex;
+  margin-left: 24px;
+}
+
+.plus {
+  font-size: 24px;
+  margin: 0 12px 0 8px;
+}

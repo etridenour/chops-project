@@ -1,8 +1,8 @@
-import { IExercise } from "../../../../core/models/exercise";
+import { IExercise } from "../../models/exercise";
 import exerciseStyles from "./Exercise.module.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { IconButton } from "@mui/material";
+import { IconButton, Paper } from "@mui/material";
 
 interface IExerciseProps {
   exercise: IExercise;
@@ -12,7 +12,7 @@ interface IExerciseProps {
 
 const Exercise = (props: IExerciseProps) => {
   return (
-    <div className={exerciseStyles.exercise}>
+    <Paper elevation={6} className={exerciseStyles.exercise}>
       <span className={exerciseStyles.title}>{props.exercise.name}</span>
       <div className={exerciseStyles["info-container"]}>
         <div className={exerciseStyles["time-signature"]}>
@@ -32,7 +32,7 @@ const Exercise = (props: IExerciseProps) => {
           <DeleteIcon />
         </IconButton>
       </div>
-    </div>
+    </Paper>
   );
 };
 

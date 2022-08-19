@@ -5,10 +5,9 @@ $white-color: white;
 
 $layout-margin: 8px;
 $header-height: 64px;
-$main-background-color: rgba($black-color, 0.2);
 
 $navbar-height: calc(100vh - ($layout-margin * 2) - $header-height - $layout-margin);
 $navbar-width: 300px;
-$navbar-item-background-color: rgba($black-color, 0.09);
+$navbar-item-background-color: rgba($white-color, 0.09);
 
 $main-content-height: $navbar-height;

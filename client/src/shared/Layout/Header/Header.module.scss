@@ -1,0 +1,24 @@
+@import 'src/styles/variables';
+
+.paper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    margin-bottom: 8px;
+    padding: 0 16px;
+    border-radius: 8px;
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+
+    .bolt-icon {
+        margin-right: 8px;
+    }
+}
+
+.link {
+    text-decoration: none;
+}

@@ -1,11 +1,11 @@
 import { TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-import { IExerciseForm } from "../../../../core/models/new-exercise-form";
+import { IExercise } from "../../models/exercise";
 import formStyles from "./NewExerciseForm.module.scss";
 
 interface NewExerciseFormProps {
-  form: IExerciseForm;
-  valueChange: (form: IExerciseForm) => void;
+  form: IExercise;
+  valueChange: (form: IExercise) => void;
 }
 
 const NewExerciseForm = (props: NewExerciseFormProps) => {
@@ -14,7 +14,7 @@ const NewExerciseForm = (props: NewExerciseFormProps) => {
     timeSignatureTopNumber: 0,
     timeSignatureBottomNumber: 0,
     measureCount: 0,
-  } as IExerciseForm);
+  } as IExercise);
 
   useEffect(() => {
     setForm({...props.form});

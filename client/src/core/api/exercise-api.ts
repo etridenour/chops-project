@@ -1,7 +1,5 @@
+import { IExercise } from "../../components/Exercises/models/exercise";
 import { ENVIRONMENT } from "../../environments";
-import { convertExerciseDtoToModel } from "./converters/convert-exercise-dto-to-model";
-import { IExerciseForm } from "../models/new-exercise-form";
-import { IExerciseDto } from "./dto/exercise.dto";
 import { RequestMethods } from "./request-methods";
 
 const exerciseUrl = `${ENVIRONMENT}/exercises`;
@@ -9,16 +7,13 @@ const exerciseUrl = `${ENVIRONMENT}/exercises`;
 const getAllExercises = async () => {
   try {
     const response = await fetch(exerciseUrl);
-    const exercises = await response.json();
-    return exercises.map((exercise: IExerciseDto) =>
-      convertExerciseDtoToModel(exercise)
-    );
+    return await response.json();
   } catch (error) {
     console.log(error);
   }
 };
 
-const createNewExercise = async (form: IExerciseForm) => {
+const createNewExercise = async (form: IExercise) => {
   try {
     const response = await fetch(exerciseUrl, {
       method: RequestMethods.Post,
@@ -34,11 +29,11 @@ const createNewExercise = async (form: IExerciseForm) => {
   }
 };
 
-const editExercise = async (id: string, form: IExerciseForm) => {
+const editExercise = async (exercise: IExercise) => {
   try {
-    await fetch(`${exerciseUrl}/${id}`, {
+    await fetch(`${exerciseUrl}/${exercise._id}`, {
       method: RequestMethods.Put,
-      body: JSON.stringify(form),
+      body: JSON.stringify(exercise),
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

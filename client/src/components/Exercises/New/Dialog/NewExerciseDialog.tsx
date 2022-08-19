@@ -5,13 +5,12 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import * as React from "react";
 import exerciseApi from "../../../../core/api/exercise-api";
-import { IExercise } from "../../../../core/models/exercise";
-import { IExerciseForm } from "../../../../core/models/new-exercise-form";
+import { IExercise } from "../../models/exercise";
 import NewExerciseForm from "../Form/NewExerciseForm";
 
 interface NewExerciseDialogProps {
   isOpen: boolean;
-  form: IExerciseForm | IExercise;
+  form: IExercise;
   edit: boolean;
   id: string;
   handleClose: () => void;
@@ -19,14 +18,14 @@ interface NewExerciseDialogProps {
 }
 
 export default function NewExerciseDialog(props: NewExerciseDialogProps) {
-  const [form, setForm] = React.useState<IExerciseForm>({} as IExerciseForm);
+  const [form, setForm] = React.useState<IExercise>({} as IExercise);
   const [loading, setLoading] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     setForm(props.form);
   }, [props.form])
 
-  const handleValueChange = (form: IExerciseForm) => {
+  const handleValueChange = (form: IExercise) => {
     setForm(form);
   };
 
@@ -45,18 +44,18 @@ export default function NewExerciseDialog(props: NewExerciseDialogProps) {
       setLoading(false);
       props.handleClose();
       props.getAllExercises();
-      setForm({} as IExerciseForm);
+      setForm({} as IExercise);
     })
     .catch((err) => console.log(err));
   }
 
   const editExercise = () => {
-    exerciseApi.editExercise(props.id, form)
+    exerciseApi.editExercise(form)
     .then((response) => {
       setLoading(false);
       props.handleClose();
       props.getAllExercises();
-      setForm({} as IExerciseForm);
+      setForm({} as IExercise);
     })
     .catch((err) => console.log(err));
   }
@@ -69,7 +68,7 @@ export default function NewExerciseDialog(props: NewExerciseDialogProps) {
         </DialogTitle>
         <DialogContent>
           <NewExerciseForm
-            form={form} valueChange={(form: IExerciseForm) => handleValueChange(form)}
+            form={form} valueChange={(form: IExercise) => handleValueChange(form)}
           />
         </DialogContent>
         <DialogActions>

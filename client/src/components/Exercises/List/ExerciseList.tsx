@@ -4,15 +4,14 @@ import Exercise from "./Exercise/Exercise";
 import NewExerciseButton from "./Exercise/NewExerciseButton";
 import exerciseListStyles from "./ExerciseList.module.scss";
 import exerciseApi from "../../../core/api/exercise-api";
-import { IExercise } from "../../../core/models/exercise";
-import { IExerciseForm } from "../../../core/models/new-exercise-form";
-import PageWrapper from "../../Layout/PageWrapper/PageWrapper";
+import { IExercise } from "../models/exercise";
+import PageWrapper from "../../../shared/Layout/PageWrapper/PageWrapper";
 
 const ExerciseList = () => {
   const [loadingExercises, setLoadingExercises] = useState<boolean>(false);
   const [exercises, setExercises] = useState<IExercise[]>([]);
   const [activeExerciseId, setActiveExerciseId] = useState<string>("");
-  const [form, setForm] = useState<IExerciseForm>({} as IExerciseForm);
+  const [form, setForm] = useState<IExercise>({} as IExercise);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [edit, setEdit] = useState<boolean>(false);
 
@@ -32,26 +31,28 @@ const ExerciseList = () => {
 
   const handleNew = () => {
     setEdit(false);
-    setForm({} as IExerciseForm);
+    setForm({} as IExercise);
     toggleDialog();
   };
 
   const handleEdit = (id: string) => {
     setEdit(true);
     const exercise: IExercise = exercises.find(
-      (exercise) => exercise.id === id
+      (exercise) => exercise._id === id
     ) as IExercise;
-    setActiveExerciseId(exercise.id);
+    exercise._id && setActiveExerciseId(exercise._id);
     setForm(convertExerciseToForm(exercise));
     toggleDialog();
   };
 
-  const convertExerciseToForm = (exercise: IExercise): IExerciseForm => {
+  const convertExerciseToForm = (exercise: IExercise): IExercise => {
     return {
+      _id: '',
       name: exercise.name,
       timeSignatureTopNumber: exercise.timeSignatureTopNumber,
       timeSignatureBottomNumber: exercise.timeSignatureBottomNumber,
       measureCount: exercise.measureCount,
+      clickTracks: []
     };
   };
 
@@ -75,8 +76,8 @@ const ExerciseList = () => {
             <Exercise
               key={i}
               exercise={exercise}
-              editExercise={() => handleEdit(exercise.id)}
-              deleteExercise={() => handleDelete(exercise.id)}
+              editExercise={() => handleEdit(exercise._id)}
+              deleteExercise={() => handleDelete(exercise._id)}
             />
           ))}
 

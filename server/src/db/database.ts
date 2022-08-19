@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 let database: mongoose.Connection;
 
 export const connectToMongodb = () => {
-  // add your own uri below
-  const uri = `${process.env.MONGODB_URI}`;
+  const uri = 'mongodb://127.0.0.1:27017';  
+  // const uri = `${process.env.MONGODB_URI}`;
   if (database) {
     return;
   }

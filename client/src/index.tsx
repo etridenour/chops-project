@@ -13,11 +13,8 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <>
-    <CssBaseline />
-    <ThemeProvider theme={theme}>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <App />
-    </ThemeProvider>
   </>
   // </React.StrictMode>
 );

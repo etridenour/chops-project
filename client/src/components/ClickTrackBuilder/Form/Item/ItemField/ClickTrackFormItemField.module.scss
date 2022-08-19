@@ -1,0 +1,21 @@
+.title-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 80px;
+    margin-right: 12px;
+    margin-top: 3px;
+    position: relative;
+
+    .title-item-text {
+      font-size: 14px;
+      position: absolute;
+      top: -30px;
+      white-space: nowrap;
+    }
+
+    .title-item-lower-text {
+      font-size: 12px;
+      align-self: flex-end;
+    }
+  }

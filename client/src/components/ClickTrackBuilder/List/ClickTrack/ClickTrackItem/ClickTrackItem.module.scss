@@ -1,0 +1,31 @@
+.items-container {
+  display: flex;
+}
+
+.item {
+  display: flex;
+  padding: 8px;
+}
+
+.start {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+  margin-right: 4px;
+}
+
+.middle {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  margin-right: 4px;
+}
+
+.end {
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}

@@ -1,0 +1,22 @@
+@import "src/styles/variables";
+
+.container {
+  display: flex;
+  background-color: #121212;
+}
+
+.section {
+  border-radius: 8px;
+  height: $main-content-height;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 0 16px;
+}
+
+.sidebar {
+  width: 300px;
+  margin-left: 8px;
+  padding: 16px;
+}
