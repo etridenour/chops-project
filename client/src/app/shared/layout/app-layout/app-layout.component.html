@@ -1,0 +1,20 @@
+@if (configLoaded) {
+  <mat-sidenav-container>
+    <mat-sidenav
+      #sidenav
+      [mode]="sidenavMode$ | async"
+      [opened]="sideNavOpened$ | async">
+      <app-navbar></app-navbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      @if ((screenSize$ | async) === AppScreenSize.Phone) {
+        <mobile-topbar (openMobileSidenav)="sidenav.toggle()"></mobile-topbar>
+      }
+
+      main content
+      {{ screenSize$ | async }}
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+} @else {
+  <div>Loading config</div>
+}
